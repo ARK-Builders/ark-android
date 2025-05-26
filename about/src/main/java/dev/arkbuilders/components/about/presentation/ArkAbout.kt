@@ -1,12 +1,19 @@
+@file:OptIn(ExperimentalLayoutApi::class)
+
 package dev.arkbuilders.components.about.presentation
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -164,7 +171,10 @@ fun ArkAbout(
                     text = stringResource(R.string.about_we_greatly_appreciate_every_bit_of_support),
                     color = ArkColor.TextTertiary
                 )
-                Row(modifier = Modifier.padding(top = 12.dp)) {
+                FlowRow(
+                    modifier = Modifier.padding(top = 12.dp),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
                     DonateBtn(
                         modifier = Modifier,
                         icon = painterResource(R.drawable.btc),
@@ -173,14 +183,17 @@ fun ArkAbout(
                         btcDialogVisible = true
                     }
                     DonateBtn(
-                        modifier = Modifier.padding(start = 12.dp),
+                        modifier = Modifier,
                         icon = painterResource(R.drawable.eth),
                         text = stringResource(R.string.about_donate_using_eth)
                     ) {
                         ethDialogVisible = true
                     }
                 }
-                Row(modifier = Modifier.padding(top = 12.dp)) {
+                FlowRow(
+                    modifier = Modifier.padding(top = 12.dp),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
                     DonateBtn(
                         modifier = Modifier,
                         icon = painterResource(R.drawable.ic_about_patreon),
@@ -189,7 +202,7 @@ fun ArkAbout(
                         ctx.openLink(ctx.getString(R.string.about_ark_patreon_url))
                     }
                     DonateBtn(
-                        modifier = Modifier.padding(start = 12.dp),
+                        modifier = Modifier,
                         icon = painterResource(R.drawable.ic_about_coffee),
                         text = stringResource(R.string.about_buy_as_a_coffee)
                     ) {
@@ -201,7 +214,10 @@ fun ArkAbout(
                     thickness = 1.dp,
                     color = ArkColor.BorderSecondary
                 )
-                Row(modifier = Modifier.padding(top = 12.dp, bottom = 50.dp)) {
+                FlowRow(
+                    modifier = Modifier.padding(top = 12.dp, bottom = 50.dp),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
                     OutlinedButton(
                         modifier = Modifier,
                         onClick = { ctx.openLink(ctx.getString(R.string.ark_contribute_url)) },
@@ -221,7 +237,7 @@ fun ArkAbout(
                         )
                     }
                     OutlinedButton(
-                        modifier = Modifier.padding(start = 12.dp),
+                        modifier = Modifier,
                         onClick = { },
                         border = BorderStroke(
                             width = 1.dp,
