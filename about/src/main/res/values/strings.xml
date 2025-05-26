@@ -7,11 +7,11 @@
     <string name="oops_something_went_wrong">Oops! Something went wrong</string>
     <string name="about_download_qr_image">Download QR Image</string>
     <string name="about_wallet_copied">Wallet copied!</string>
-    <string name="ark_support_email">support@ark-builders.dev</string>
+    <string name="ark_support_email" translatable="false">support@ark-builders.dev</string>
     <string name="about_send_email_part_1">"Send us the transaction id by email "</string>
     <string name="about_send_email_part_2">" to receive premium support. We’ll make our best to help you with any issue you encounter while using our Software."</string>
-    <string name="about_btc_wallet">bc1qx8n9r4uwpgrhgnamt2uew53lmrxd8tuevp7lv5</string>
-    <string name="about_eth_wallet">0x9765C5aC38175BFbd2dC7a840b63e50762B80a1b</string>
+    <string name="about_btc_wallet" translatable="false">bc1qx8n9r4uwpgrhgnamt2uew53lmrxd8tuevp7lv5</string>
+    <string name="about_eth_wallet" translatable="false">0x9765C5aC38175BFbd2dC7a840b63e50762B80a1b</string>
     <string name="about_donate_eth">Donate using Ethereum</string>
     <string name="about_donate_btc">Donate using Bitcoin</string>
     <string name="ark_website_url" translatable="false">https://www.ark-builders.dev/</string>
