@@ -5,6 +5,7 @@
     <string name="version">Version %1$s</string>
     <string name="copy">Copy</string>
     <string name="oops_something_went_wrong">Oops! Something went wrong</string>
+    <string name="about_ark_builders_copyright" translatable="false">© 2025 ARK Builders</string>
     <string name="about_download_qr_image">Download QR Image</string>
     <string name="about_wallet_copied">Wallet copied!</string>
     <string name="ark_support_email" translatable="false">support@ark-builders.dev</string>

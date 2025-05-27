@@ -104,7 +104,7 @@ fun ArkAbout(
             )
             Text(
                 modifier = Modifier.padding(top = 12.dp),
-                text = "ARK Builders · Copyright ©2024",
+                text = stringResource(R.string.about_ark_builders_copyright),
                 color = ArkColor.TextTertiary
             )
             Row(
