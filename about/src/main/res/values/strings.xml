@@ -17,7 +17,7 @@
     <string name="about_donate_btc">Donate using Bitcoin</string>
     <string name="ark_website_url" translatable="false">https://www.ark-builders.dev/</string>
     <string name="ark_tg_url" translatable="false">https://t.me/ark_builders</string>
-    <string name="ark_contribute_url" translatable="false">https://www.ark-builders.dev/contribute/?tab=goodFirstIssue</string>
+    <string name="ark_contribute_url" translatable="false">https://www.ark-builders.dev/contribute/?category=good+first+issue</string>
     <string name="about_ark_buy_coffee_url" translatable="false">https://buymeacoffee.com/arkbuilders</string>
     <string name="about_ark_patreon_url" translatable="false">https://www.patreon.com/ARKBuilders</string>
     <string name="ark_discord_url" translatable="false">https://discord.gg/tPUJTxud</string>
