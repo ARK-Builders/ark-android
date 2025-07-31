@@ -5,6 +5,9 @@ on:
     tags:
     - 'tagselector*'
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -24,5 +27,3 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         arguments: tagselector:publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
