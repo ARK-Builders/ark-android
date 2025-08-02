@@ -64,7 +64,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso)
 }
 
-val libVersion: String = scmVersion.version
+val libVersion: String = "0.2.0"
 
 publishing {
     publications {
