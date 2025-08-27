@@ -4,4 +4,5 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.22" apply false
     id("com.android.library") version "8.2.2" apply false
     id("pl.allegro.tech.build.axion-release") version "1.17.0" apply false
+    id ("org.jetbrains.kotlin.plugin.serialization") version "1.8.21" apply false
 }

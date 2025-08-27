@@ -1,6 +1,9 @@
 import java.net.URI
 import java.util.Properties
 
+include(":canvas")
+
+
 pluginManagement {
     repositories {
         google()

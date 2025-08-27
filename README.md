@@ -1,4 +1,4 @@
-# **ARK Android**
+# ARK Android
 
 ARK Android contains a set of independent component libraries which can be used across ARK projects.
 
