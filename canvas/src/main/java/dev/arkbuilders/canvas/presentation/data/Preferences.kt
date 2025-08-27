@@ -63,7 +63,8 @@ class Preferences @Inject constructor(private val appCtx: Context) {
                 color.value,
                 resolution
             )
-            val jsonString = Json.encodeToString(defaults)
+            val json = Json { ignoreUnknownKeys = true } // Custom Json instance
+            val jsonString = json.encodeToString(ImageDefaults.serializer(), defaults)
             defaultsStorage.writeText(jsonString, UTF_8)
         }
     }
