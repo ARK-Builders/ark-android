@@ -4,12 +4,15 @@ package dev.arkbuilders.components.about.presentation
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -27,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -82,12 +86,19 @@ fun ArkAbout(
             modifier = Modifier.padding(horizontal = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Icon(
-                modifier = Modifier.padding(top = 32.dp),
-                painter = painterResource(id = appLogoResId),
-                contentDescription = "",
-                tint = Color.Unspecified
-            )
+            Box(
+                modifier = Modifier
+                    .padding(top = 32.dp)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    modifier = Modifier.fillMaxWidth(0.25f),
+                    painter = painterResource(id = appLogoResId),
+                    contentDescription = appName,
+                    contentScale = ContentScale.FillWidth,
+                )
+            }
             Text(
                 modifier = Modifier.padding(top = 20.dp),
                 text = appName,
