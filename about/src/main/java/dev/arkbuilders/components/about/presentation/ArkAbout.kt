@@ -4,7 +4,9 @@ package dev.arkbuilders.components.about.presentation
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -13,7 +15,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -29,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -84,12 +86,19 @@ fun ArkAbout(
             modifier = Modifier.padding(horizontal = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Icon(
-                modifier = Modifier.padding(top = 32.dp),
-                painter = painterResource(id = appLogoResId),
-                contentDescription = "",
-                tint = Color.Unspecified
-            )
+            Box(
+                modifier = Modifier
+                    .padding(top = 32.dp)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    modifier = Modifier.fillMaxWidth(0.25f),
+                    painter = painterResource(id = appLogoResId),
+                    contentDescription = appName,
+                    contentScale = ContentScale.FillWidth,
+                )
+            }
             Text(
                 modifier = Modifier.padding(top = 20.dp),
                 text = appName,
@@ -107,29 +116,7 @@ fun ArkAbout(
                 text = stringResource(R.string.about_ark_builders_copyright),
                 color = ArkColor.TextTertiary
             )
-            Row(
-                modifier = Modifier.padding(top = 8.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                SocialLink(
-                    painterResource(R.drawable.ic_about_site),
-                    text = stringResource(R.string.website)
-                ) {
-                    ctx.openLink(ctx.getString(R.string.ark_website_url))
-                }
-                SocialLink(
-                    painterResource(R.drawable.ic_about_telegram),
-                    text = stringResource(R.string.telegram)
-                ) {
-                    ctx.openLink(ctx.getString(R.string.ark_tg_url))
-                }
-                SocialLink(
-                    painterResource(R.drawable.ic_about_discord),
-                    text = stringResource(R.string.discord)
-                ) {
-                    ctx.openLink(ctx.getString(R.string.ark_discord_url))
-                }
-            }
+            SocialLinks(modifier = Modifier.padding(top = 8.dp))
             OutlinedButton(
                 modifier = Modifier
                     .padding(top = 28.dp)
@@ -257,6 +244,65 @@ fun ArkAbout(
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun SocialLinks(modifier: Modifier) {
+    val ctx = LocalContext.current
+    FlowRow(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalArrangement = Arrangement.Center,
+    ) {
+        SocialLink(
+            painterResource(R.drawable.ic_about_site),
+            text = stringResource(R.string.ark_website)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_website_url))
+        }
+        SocialLink(
+            painterResource(R.drawable.ic_about_telegram),
+            text = stringResource(R.string.ark_telegram)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_tg_url))
+        }
+        SocialLink(
+            painterResource(R.drawable.ic_about_discord),
+            text = stringResource(R.string.ark_discord)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_discord_url))
+        }
+        SocialLink(
+            painterResource(R.drawable.ic_about_bluesky),
+            text = stringResource(R.string.ark_bluesky)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_bluesky_url))
+        }
+        SocialLink(
+            painterResource(R.drawable.ic_about_instagram),
+            text = stringResource(R.string.ark_instagram)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_instagram_url))
+        }
+        SocialLink(
+            painterResource(R.drawable.ic_about_x),
+            text = stringResource(R.string.ark_x)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_x_url))
+        }
+        SocialLink(
+            painterResource(R.drawable.ic_about_github),
+            text = stringResource(R.string.ark_github)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_github_url))
+        }
+        SocialLink(
+            painterResource(R.drawable.ic_about_medium),
+            text = stringResource(R.string.ark_medium)
+        ) {
+            ctx.openLink(ctx.getString(R.string.ark_medium_url))
         }
     }
 }
